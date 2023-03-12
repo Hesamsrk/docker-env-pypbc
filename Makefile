@@ -18,6 +18,3 @@ br:
 
 rm:
 	docker rm -f $(tag)_container
-
-pwd:
-	echo $(mkfile_dir)/dev:/app/dev

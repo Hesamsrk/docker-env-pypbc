@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 WORKDIR /app
 
-# Inital Liberaries
+# Inital linux Liberaries
 RUN apt-get -y update
 RUN apt-get install -y libgmp-dev build-essential flex bison git curl python3-pip
 #-------------------------------------------------------------------------------
@@ -18,6 +18,8 @@ RUN cd pbc-0.5.14 && make && make install && ldconfig
 # Install PyPBC
 RUN git clone --depth 1 https://github.com/debatem1/pypbc.git
 RUN cd pypbc &&  pip3 install .
+
+# RUN pip3 install ...
 
 WORKDIR /app/dev
 
